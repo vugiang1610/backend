@@ -4,7 +4,11 @@ const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 const SECRET_KEY = 'your_secret_key'; // Khóa bí mật dùng để mã hóa JWT
 const cors = require('cors');
 
